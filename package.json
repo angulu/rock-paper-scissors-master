@@ -23,6 +23,7 @@
     "type": "git",
     "url": "https://github.com/angulu/rock-paper-scissors-master"
   },
+  "homepage": "https://angulu.github.io/rock-paper-scissors-master",
   "browserslist": {
     "production": [
       ">0.2%",
