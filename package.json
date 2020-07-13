@@ -19,6 +19,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angulu/rock-paper-scissors-master"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
