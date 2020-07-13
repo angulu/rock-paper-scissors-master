@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/rock-paper-scissors-master/static/css/main.b50f4974.chunk.css",
+    "main.js": "/rock-paper-scissors-master/static/js/main.d36734af.chunk.js",
+    "main.js.map": "/rock-paper-scissors-master/static/js/main.d36734af.chunk.js.map",
+    "runtime-main.js": "/rock-paper-scissors-master/static/js/runtime-main.92623ad4.js",
+    "runtime-main.js.map": "/rock-paper-scissors-master/static/js/runtime-main.92623ad4.js.map",
+    "static/js/2.e12e6650.chunk.js": "/rock-paper-scissors-master/static/js/2.e12e6650.chunk.js",
+    "static/js/2.e12e6650.chunk.js.map": "/rock-paper-scissors-master/static/js/2.e12e6650.chunk.js.map",
+    "index.html": "/rock-paper-scissors-master/index.html",
+    "precache-manifest.1b3ce4c97b05220eb2b1afec06b183bf.js": "/rock-paper-scissors-master/precache-manifest.1b3ce4c97b05220eb2b1afec06b183bf.js",
+    "service-worker.js": "/rock-paper-scissors-master/service-worker.js",
+    "static/css/main.b50f4974.chunk.css.map": "/rock-paper-scissors-master/static/css/main.b50f4974.chunk.css.map",
+    "static/js/2.e12e6650.chunk.js.LICENSE.txt": "/rock-paper-scissors-master/static/js/2.e12e6650.chunk.js.LICENSE.txt",
+    "static/media/bg-triangle.svg": "/rock-paper-scissors-master/static/media/bg-triangle.a96c1e91.svg",
+    "static/media/blue-circle.svg": "/rock-paper-scissors-master/static/media/blue-circle.35c20f13.svg",
+    "static/media/dot.svg": "/rock-paper-scissors-master/static/media/dot.d1463231.svg",
+    "static/media/icon-close.svg": "/rock-paper-scissors-master/static/media/icon-close.919ab92a.svg",
+    "static/media/icon-paper.svg": "/rock-paper-scissors-master/static/media/icon-paper.69a8c2e9.svg",
+    "static/media/icon-rock.svg": "/rock-paper-scissors-master/static/media/icon-rock.8ce1e109.svg",
+    "static/media/icon-scissors.svg": "/rock-paper-scissors-master/static/media/icon-scissors.bec2f9b3.svg",
+    "static/media/image-rules.svg": "/rock-paper-scissors-master/static/media/image-rules.5d74d25d.svg",
+    "static/media/logo.svg": "/rock-paper-scissors-master/static/media/logo.759a2075.svg",
+    "static/media/red-circle.svg": "/rock-paper-scissors-master/static/media/red-circle.9d6e2212.svg",
+    "static/media/yellow-circle.svg": "/rock-paper-scissors-master/static/media/yellow-circle.d9074218.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92623ad4.js",
+    "static/js/2.e12e6650.chunk.js",
+    "static/css/main.b50f4974.chunk.css",
+    "static/js/main.d36734af.chunk.js"
+  ]
+}
