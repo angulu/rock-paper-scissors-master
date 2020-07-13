@@ -1,0 +1,11 @@
+.backgroundCircle {
+    /* background-image: radial-gradient( circle, hsl(214, 47%, 23%)); */
+    position: relative;
+    width: 700px;
+    /* height: 300px; */
+    background:
+    radial-gradient(100px circle, hsl(214, 47%, 52%) 60%, transparent 51%),
+    radial-gradient(400px circle, hsl(214, 42%, 37%) 40%, transparent 31%),
+    radial-gradient(900px circle, hsl(214, 47%, 23%) 20%, transparent 11%);
+}
+

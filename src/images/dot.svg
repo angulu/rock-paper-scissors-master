@@ -1,0 +1,9 @@
+<svg viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+<filter id="shadow3">
+     <feDropShadow dx="0" dy="0" stdDeviation="0"/>
+    </filter>
+  </defs> 
+
+  <circle cx="5" cy="50%" r="3" style="fill:hsl(218, 49%, 18%); filter:url(#shadow3);"/>
+</svg>

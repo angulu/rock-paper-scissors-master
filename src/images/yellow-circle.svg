@@ -1,0 +1,15 @@
+<svg viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="-0.25" stdDeviation="0"
+          flood-color="grey" flood-opacity="0.5"/>
+    </filter>
+<filter id="shadow3">
+     <feDropShadow dx="0" dy="0.25" stdDeviation="0"
+         flood-color="#b37a00" flood-opacity="0.9"/>
+    </filter>
+  </defs> 
+
+  <circle cx="5" cy="50%" r="3" stroke="#e89f00" stroke-width="0.65" style="fill:white; filter:url(#shadow3);"/>
+  <ellipse cx="5" cy="50.5%" rx="2.63" ry="2.47" style="fill:white; filter:url(#shadow);"/>
+</svg>
