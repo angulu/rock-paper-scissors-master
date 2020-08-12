@@ -14,7 +14,7 @@ function colorObject(value){
     let color = ""
 
     if (value === paper) {
-        color = blue
+        color = blue 
     } else if (value === rock) {
         color = red
     } else {
