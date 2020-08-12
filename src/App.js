@@ -46,17 +46,6 @@ function App(props) {
                 <img src={rules} height="73%" width="73%"/>
             </div>}
 
-
-          {/* Rules
-
-          You Picked
-          The House Picked
-
-          You Win
-          You Lose
-
-          Play Again */}
-
         </div>
 
       </div>

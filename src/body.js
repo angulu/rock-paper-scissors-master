@@ -226,15 +226,15 @@ class Body extends React.Component {
                 <img src={this.state.users_pick} height="95%" width="95%" alt={this.state.users_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-183%', left:'-43%'}}>
+            <div style={{position:'relative', z_index:'10', top:'-187%', left:'-43%'}}>
                 <img src={this.state.outer_pick} height="23%" width="23%"  alt={this.state.outer_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-242%', left:'75%'}}>
+            <div style={{position:'relative', z_index:'10', top:'-247%', left:'75%'}}>
                 <img src={this.state.house_pick ? this.state.house_pick : dot}  height="95%" width="95%"  alt={this.state.house_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-295%', left:'108%'}}>
+            <div style={{position:'relative', z_index:'10', top:'-300%', left:'108%'}}>
                 <img src={this.state.inner_pick} height="23%" width="23%"  alt={this.state.inner_pick} />
             </div>
 
@@ -242,7 +242,7 @@ class Body extends React.Component {
                 <div>
                     <p style={{color:'white', fontSize:'3.5vw', letterSpacing:'2.5px', margin:'0px 0px 5px'}}>{this.state.end_message}</p>
                 </div>
-                <input className="play-button" type='button' value="PLAY AGAIN" onClick={() => this.setState({toggle_view:"play"})}/>
+                <input className="play-button" type='button' value="PLAY AGAIN" onClick={() => this.setState({toggle_view:"play", inner_pick:"", house_pick:"", outer_pick:"", users_pick:""})}/>
             </div>
 
         </div>
