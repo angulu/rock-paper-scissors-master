@@ -115,12 +115,16 @@ class Body extends React.Component {
             game_end = "YOU TIED"
           }
 
-        currentComponent.setState({ house_pick: house_value, inner_pick: game[house_pick_num % 3], end_message: game_end})
+          currentComponent.setState({ house_pick: house_value, inner_pick: game[house_pick_num % 3], end_message: game_end, toggle_view: 'results'})
 
-        console.log(currentComponent.state.house_pick, currentComponent.state.inner_pick);
+          console.log(currentComponent.state.house_pick, currentComponent.state.inner_pick);
 
     }).then(function() {
+
+        setTimeout(function() {
             currentComponent.setState({toggle_view: 'end'})
+        },
+        1000);
     });
 
   }
@@ -194,15 +198,15 @@ class Body extends React.Component {
                     <img src={this.state.outer_pick} height="23%" width="23%"  alt={this.state.outer_pick} />
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-140%', left:'40%'}}>
+                <div style={{position:'relative', z_index:'10', top:'-140%', left:'46%'}}>
                     <img src={this.state.house_pick ? this.state.house_pick : dot}  height="88%" width="88%"  alt={this.state.house_pick} />
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-193%', left:'72%'}}>
+                <div style={{position:'relative', z_index:'10', top:'-193%', left:'76%'}}>
                     <img src={this.state.inner_pick} height="23%" width="23%"  alt={this.state.inner_pick} />
                 </div>
 
-                <img src={dot} height="88%" width="88%"  alt={this.state.house_pick} />
+                {/* <img src={dot} height="88%" width="88%"  alt={this.state.house_pick} /> */}
 
             </div>
         );
@@ -230,7 +234,7 @@ class Body extends React.Component {
                 <img src={this.state.outer_pick} height="23%" width="23%"  alt={this.state.outer_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-247%', left:'75%'}}>
+            <div style={{position:'relative', z_index:'10', top:'-244%', left:'76%'}}>
                 <img src={this.state.house_pick ? this.state.house_pick : dot}  height="95%" width="95%"  alt={this.state.house_pick} />
             </div>
 
