@@ -12,14 +12,13 @@ function App(props) {
   const [modal, setModal] = useState(false);
   const [score, setScore] = useState(0);
 
-  //render () {
     return (
       <div>
           <div className="container">
 
             <div className="header">
-              <div style={{padding: '20px 20px 15px'}}>
-                <img src={logo} height="26%" width="26%"/>
+              <div className="padded_header">
+                <img src={logo} className="logo"/>
                 <div className="inner-header">
                     <p className="score">SCORE</p>
                     <p className="score-value">{score}</p>
@@ -32,25 +31,28 @@ function App(props) {
             </div>
 
             <div className="footer-div">
-              <div style={{float:'right', marginRight: '20px'}}>
+              <div className="footer_content">
                 <div className="footer" onClick={() => setModal(true)}>RULES</div>
               </div>
             </div>
 
             {modal &&
               <div className="modal">
-                <div style={{width:'100%'}}>
-                  <p style={{color:'hsl(238, 12%, 38%)', fontSize:'1.8vw', fontWeight:'700', marginTop:'0px'}}>RULES<span style={{paddingLeft:'70%'}} onClick={() => setModal(false)}><img src={close} height="5%" width="5%"/></span></p>
+                <div className="inner_modal">
+                <p className="modal_header">RULES</p>
+                  {/* <p className="modal_header">RULES<span className="modal_cross" onClick={() => setModal(false)}><img src={close} className="cross_img"/></span></p> */}
                 </div>
 
-                <img src={rules} height="73%" width="73%"/>
-            </div>}
+                <img src={rules} className="modal_img"/>
+
+                <img src={close} className="cross_img" onClick={() => setModal(false)}/>
+              </div>
+            }
 
         </div>
 
       </div>
     );
   }
-//}
 
 export default App;

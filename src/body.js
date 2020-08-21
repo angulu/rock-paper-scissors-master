@@ -1,4 +1,5 @@
 import React from 'react';
+import './body.css';
 
 import triangle from './images/bg-triangle.svg';
 import red from './images/red-circle.svg';
@@ -20,8 +21,6 @@ function colorObject(value){
     } else {
         color = yellow
     }
-
-    console.log('co', color, value);
 
     return color
 }
@@ -53,8 +52,6 @@ class Body extends React.Component {
     let currentComponent = this;
 
     let game_end = ""
-
-    console.log('bp', game[house_pick_num %3], house_pick_num);
 
     new Promise(function(resolve, reject) {
         setTimeout(function() {
@@ -117,8 +114,6 @@ class Body extends React.Component {
 
           currentComponent.setState({ house_pick: house_value, inner_pick: game[house_pick_num % 3], end_message: game_end, toggle_view: 'results'})
 
-          console.log(currentComponent.state.house_pick, currentComponent.state.inner_pick);
-
     }).then(function() {
 
         setTimeout(function() {
@@ -131,51 +126,58 @@ class Body extends React.Component {
 
   render () {
     
-    let up_dot = "", mid_dot = "", down_dot = ""
+    let up_dot = "", mid_dot = "", down_dot = "", end_svg = "end_house_svg", end_icon = "end_house_icon";
 
     if (this.state.end_message === 'YOU WIN') {
         up_dot = "dotLeft1"
         mid_dot = "dotLeft2"
         down_dot = "dotLeft3"
-    }
-
-    if (this.state.end_message === 'YOU LOSE') {
+    } else if (this.state.end_message === 'YOU LOSE') {
         up_dot = "dot1"
         mid_dot = "dot2"
         down_dot = "dot3"
+
+        if (this.state.house_pick === blue) {
+            end_svg = "blue_house_svg"
+            end_icon = "blue_house_icon"
+        }
+
+    } else {
+        end_svg = "tied_house_svg"
+        end_icon = "tied_house_icon"
     }
 
     if (this.state.toggle_view === "play") {
 
         return (
 
-            <div style={{margin: '100px 0px 0px 100px', width: '300px', height: '300px', top:'35%'}}>
+            <div className="body_div play_div">
                 <div>
-                    <img src={triangle} height="70%" width="70%" alt='triangle'/>
+                    <img src={triangle} className="triangle" alt='triangle'/>
                 </div>
 
-                <div style={{position:'relative', top:'-37%', left:'-2%'}}>
-                    <img src={red} height="72%" width="72%" alt='red'/>
+                <div className="red_svg">
+                    <img src={red} className="circle_img" alt='red'/>
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-160%', left:'-35%'}}>
-                    <img src={blue} height="72%" width="72%" alt='blue'/>
+                <div className="blue_svg">
+                    <img src={blue} className="circle_img" alt='blue'/>
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-225%', left:'34%'}}>
-                    <img src={yellow} height="72%" width="72%" alt='yellow'/>
+                <div className="yellow_svg">
+                    <img src={yellow} className="circle_img" alt='yellow'/>
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-210.5%', left:'24%'}}>
-                    <img src={rock} onClick={() => this.userPicked(rock)} height="20%" width="20%" alt='rock'/>
+                <div className="rock_svg">
+                    <img src={rock} onClick={() => this.userPicked(rock)} className="icon_img" alt='rock'/>
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-292%', left:'-9%'}}>
-                    <img src={paper} onClick={() => this.userPicked(paper)} height="20%" width="20%" alt='paper'/>
+                <div className="paper_svg">
+                    <img src={paper} onClick={() => this.userPicked(paper)} className="icon_img" alt='paper'/>
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-315.5%', left:'60%'}}>
-                    <img src={scissors} onClick={() => this.userPicked(scissors)} height="20%" width="20%" alt='scissors'/>
+                <div className="scissors_svg">
+                    <img src={scissors} onClick={() => this.userPicked(scissors)} className="icon_img" alt='scissors'/>
                 </div>
 
             </div>
@@ -185,28 +187,26 @@ class Body extends React.Component {
 
         return (
 
-            <div style={{margin: '100px 0px 0px', width: '300px', height: '300px', top:'35%'}}>
+            <div className="body_div">
 
-                <p style={{color:'white', fontSize:'1.5vw', position:'relative', z_index:'10', top:'-20%', left:'-40%', paddingLeft:'30%', letterSpacing:'2px'}}>YOU PICKED</p>
-                <p style={{color:'white', fontSize:'1.5vw', position:'relative', z_index:'10', top:'-34%', left:'40%', paddingLeft:'20%', letterSpacing:'2px'}}>THE HOUSE PICKED</p>
+                <p className="picked_title">YOU PICKED</p>
+                <p className="house_title">THE HOUSE PICKED</p>
 
-                <div style={{position:'relative', z_index:'10', top:'-35%', left:'-40%'}}>
-                    <img src={this.state.users_pick} height="88%" width="88%" alt={this.state.users_pick} />
+                <div className="picked_svg">
+                    <img src={this.state.users_pick} className="result_svg" alt={this.state.users_pick} />
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-88%', left:'-8%'}}>
-                    <img src={this.state.outer_pick} height="23%" width="23%"  alt={this.state.outer_pick} />
+                <div className="picked_icon">
+                    <img src={this.state.outer_pick} className="result_icon" alt={this.state.outer_pick} />
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-140%', left:'46%'}}>
-                    <img src={this.state.house_pick ? this.state.house_pick : dot}  height="88%" width="88%"  alt={this.state.house_pick} />
+                <div className="house_svg">
+                    <img src={this.state.house_pick ? this.state.house_pick : dot}  className="result_svg" alt={this.state.house_pick} />
                 </div>
 
-                <div style={{position:'relative', z_index:'10', top:'-193%', left:'76%'}}>
-                    <img src={this.state.inner_pick} height="23%" width="23%"  alt={this.state.inner_pick} />
+                <div className="house_icon">
+                    <img src={this.state.inner_pick} className="result_icon" alt={this.state.inner_pick} />
                 </div>
-
-                {/* <img src={dot} height="88%" width="88%"  alt={this.state.house_pick} /> */}
 
             </div>
         );
@@ -215,7 +215,7 @@ class Body extends React.Component {
 
     return (
 
-        <div style={{margin: '100px 0px 0px', width: '300px', height: '300px', top:'35%', backgroundColor:'none'}}>
+        <div className="body_div">
 
             <div className="backgroundCircle">
                 <span className={up_dot}></span>
@@ -223,28 +223,28 @@ class Body extends React.Component {
                 <span className={down_dot}></span>
             </div>
 
-            <p style={{color:'white', fontSize:'1.5vw', position:'relative', z_index:'10', top:'-113%', left:'-70%', paddingLeft:'20%', letterSpacing:'2px'}}>YOU PICKED</p>
-            <p style={{color:'white', fontSize:'1.5vw', position:'relative', z_index:'10', top:'-128%', left:'70%', paddingLeft:'20%', letterSpacing:'2px'}}>THE HOUSE PICKED</p>
+            <p className="end_picked_title">YOU PICKED</p>
+            <p className="end_house_title">THE HOUSE PICKED</p>
 
-            <div style={{position:'relative', z_index:'10', top:'-132%', left:'-78%'}}>
-                <img src={this.state.users_pick} height="95%" width="95%" alt={this.state.users_pick} />
+            <div className="end_picked_svg">
+                <img src={this.state.users_pick} className="end_svg" alt={this.state.users_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-187%', left:'-43%'}}>
-                <img src={this.state.outer_pick} height="23%" width="23%"  alt={this.state.outer_pick} />
+            <div className="end_picked_icon">
+                <img src={this.state.outer_pick} className="result_icon"  alt={this.state.outer_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-244%', left:'76%'}}>
-                <img src={this.state.house_pick ? this.state.house_pick : dot}  height="95%" width="95%"  alt={this.state.house_pick} />
+            <div className={end_svg}>
+                <img src={this.state.house_pick ? this.state.house_pick : dot}  className="end_svg"  alt={this.state.house_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'10', top:'-300%', left:'108%'}}>
-                <img src={this.state.inner_pick} height="23%" width="23%"  alt={this.state.inner_pick} />
+            <div className={end_icon}>
+                <img src={this.state.inner_pick} className="result_icon"  alt={this.state.inner_pick} />
             </div>
 
-            <div style={{position:'relative', z_index:'100', top:'-328%', left:'-5%', display:'flex', alignItems:'center', flexDirection:'column'}}>
+            <div className="button_div">
                 <div>
-                    <p style={{color:'white', fontSize:'3.5vw', letterSpacing:'2.5px', margin:'0px 0px 5px'}}>{this.state.end_message}</p>
+                    <p className="end_message">{this.state.end_message}</p>
                 </div>
                 <input className="play-button" type='button' value="PLAY AGAIN" onClick={() => this.setState({toggle_view:"play", inner_pick:"", house_pick:"", outer_pick:"", users_pick:""})}/>
             </div>
