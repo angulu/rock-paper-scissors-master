@@ -140,7 +140,8 @@
     margin: 0px;
     padding:80px 20px 0px;
     width:95vw;
-    height: 680px;
+    height: 130vh;
+    /* height: 680px; */
   }
 
   .modal_header {
